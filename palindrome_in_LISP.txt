@@ -1,0 +1,19 @@
+(defun reverseALL (L)
+	(cond ( (NULL L) NIL)
+		((LISTP (CAR L)) (append (reverseALL (CDR L)) (list (reverseALL (CAR L))))
+		)
+		(T (APPEND (reverseALL (CDR L)) (list (CAR L))))
+	)
+)
+
+(defun palindrome (L)
+	(cond ( (NULL L) NIL)
+		(T (EQUAL (reverseALL L) L))
+	)
+)
+
+
+(palindrome '(R A C E C A R))
+(palindrome '(W A S I T A C A R O R A C A T I S A W))
+(palindrome '(N I X O N))
+

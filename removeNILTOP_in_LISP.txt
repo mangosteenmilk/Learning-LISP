@@ -1,0 +1,9 @@
+(defun removeNILTOP (L)
+    (cond ( (NULL L) NIL )
+          ((NULL (CAR L)) (removeNILTOP (CDR L)))
+          (T (cons (CAR L) (removeNILTOP (CDR L)))))
+)
+
+
+;;;(trace removeNILTOP)
+(removeNILTop '(NIL X NIL NIL Y NIL Z))

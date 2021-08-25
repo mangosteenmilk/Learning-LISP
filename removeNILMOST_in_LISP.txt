@@ -1,0 +1,15 @@
+(defun removeNILMOST (L)
+    (cond ( (NULL L) NIL )
+          ((NULL (CAR L)) (removeNILMOST (CDR L)))
+	  ((LISTP (CAR L)) (cons (removeNILMOST (CAR L)) (removeNILMOST(CDR L))))
+          (T (cons (CAR L) (removeNILMOST (CDR L)))))
+)
+
+
+(removeNILMost '(NIL X NIL NIL Y NIL Z))
+(removeNILMOST '(X NIL (Y NIL Z) NIL))
+(removeNILMOST '(NIL (NIL) (X NIL Y) (NIL NIL) Z))
+(removeNILMOST '(NIL ((((((NIL) NIL)))))))
+
+
+

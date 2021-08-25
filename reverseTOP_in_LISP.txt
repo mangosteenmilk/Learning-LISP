@@ -1,0 +1,9 @@
+(defun reverseTop (L)
+	(cond ( (NULL L) NIL)
+		(T(APPEND (reverseTop (CDR L)) (list (CAR L))))
+	)
+)
+
+(trace reverseTop)
+(reverseTop '(X Y Z))
+(reverseTop '(X (Y Z (A)) (W)))

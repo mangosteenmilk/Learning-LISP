@@ -1,0 +1,11 @@
+(defun reverseALL (L)
+	(cond ( (NULL L) NIL)
+		((LISTP (CAR L)) (append (reverseALL (CDR L)) (list (reverseALL (CAR L))))
+		)
+		(T (APPEND (reverseALL (CDR L)) (list (CAR L))))
+	)
+)
+
+(trace reverseALL)
+(reverseALL '(X Y Z))
+(reverseALL '(X (Y Z (A)) (W)))
